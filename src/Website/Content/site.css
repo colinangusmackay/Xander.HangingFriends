@@ -1,0 +1,105 @@
+﻿body {
+}
+
+.centring-container {
+    width: 100%;
+}
+
+.answer-rack {
+    margin: 0 auto;
+}
+
+.letter-rack {
+    margin: 0 auto;
+}
+.rack-line {
+    clear: both;
+}
+.tile {
+    margin: 1px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.unknown-tile {
+    background-color: #b0e0e6;
+}
+
+@media (min-width:240px) {
+    .answer-rack {
+        width:252px;
+    }
+    .letter-rack {
+        width: 221px;
+    }
+    .tile
+    {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media (min-width: 400px)
+{
+    .answer-rack {
+        width:396px;
+    }
+    .letter-rack {
+        width: 352px;
+    }
+    .tile
+    {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (min-width: 640px)
+{
+    .answer-rack {
+        width:580px;
+    }
+    .letter-rack {
+        width: 509px;
+    }
+    .tile
+    {
+        width: 67px;
+        height: 67px;
+    }
+}
+
+.tile-a { background-image: url('/Content/images/A_67.png'); }
+.tile-b { background-image: url('/Content/images/B_67.png'); }
+.tile-c { background-image: url('/Content/images/C_67.png'); }
+.tile-d { background-image: url('/Content/images/D_67.png'); }
+.tile-e { background-image: url('/Content/images/E_67.png'); }
+.tile-f { background-image: url('/Content/images/F_67.png'); }
+.tile-g { background-image: url('/Content/images/G_67.png'); }
+.tile-h { background-image: url('/Content/images/H_67.png'); }
+.tile-i { background-image: url('/Content/images/I_67.png'); }
+.tile-j { background-image: url('/Content/images/J_67.png'); }
+.tile-k { background-image: url('/Content/images/K_67.png'); }
+.tile-l { background-image: url('/Content/images/L_67.png'); }
+.tile-m { background-image: url('/Content/images/M_67.png'); }
+.tile-n { background-image: url('/Content/images/N_67.png'); }
+.tile-o { background-image: url('/Content/images/O_67.png'); }
+.tile-p { background-image: url('/Content/images/P_67.png'); }
+.tile-q { background-image: url('/Content/images/Q_67.png'); }
+.tile-r { background-image: url('/Content/images/R_67.png'); }
+.tile-s { background-image: url('/Content/images/S_67.png'); }
+.tile-t { background-image: url('/Content/images/T_67.png'); }
+.tile-u { background-image: url('/Content/images/U_67.png'); }
+.tile-v { background-image: url('/Content/images/V_67.png'); }
+.tile-w { background-image: url('/Content/images/W_67.png'); }
+.tile-x { background-image: url('/Content/images/X_67.png'); }
+.tile-y { background-image: url('/Content/images/Y_67.png'); }
+.tile-z { background-image: url('/Content/images/Z_67.png'); }
+
+.footer {
+    clear: both;
+}
+
+
+
+
