@@ -21,8 +21,9 @@
     display: inline-block;
 }
 
-.unknown-tile {
+.tile-not-used {
     background-color: #b0e0e6;
+    background-image: url('/Content/images/not-used.png');
 }
 
 @media (min-width:240px) {
@@ -95,6 +96,39 @@
 .tile-x { background-image: url('/Content/images/X_67.png'); }
 .tile-y { background-image: url('/Content/images/Y_67.png'); }
 .tile-z { background-image: url('/Content/images/Z_67.png'); }
+.tile-unknown { background-image: url('/Content/images/blank_67.png'); }
+.tile-search { background-image: url('/Content/images/search_67.png'); }
+
+.inv-tile-a { background-image: url('/Content/images/inv_A_67.png'); }
+.inv-tile-b { background-image: url('/Content/images/inv_B_67.png'); }
+.inv-tile-c { background-image: url('/Content/images/inv_C_67.png'); }
+.inv-tile-d { background-image: url('/Content/images/inv_D_67.png'); }
+.inv-tile-e { background-image: url('/Content/images/inv_E_67.png'); }
+.inv-tile-f { background-image: url('/Content/images/inv_F_67.png'); }
+.inv-tile-g { background-image: url('/Content/images/inv_G_67.png'); }
+.inv-tile-h { background-image: url('/Content/images/inv_H_67.png'); }
+.inv-tile-i { background-image: url('/Content/images/inv_I_67.png'); }
+.inv-tile-j { background-image: url('/Content/images/inv_J_67.png'); }
+.inv-tile-k { background-image: url('/Content/images/inv_K_67.png'); }
+.inv-tile-l { background-image: url('/Content/images/inv_L_67.png'); }
+.inv-tile-m { background-image: url('/Content/images/inv_M_67.png'); }
+.inv-tile-n { background-image: url('/Content/images/inv_N_67.png'); }
+.inv-tile-o { background-image: url('/Content/images/inv_O_67.png'); }
+.inv-tile-p { background-image: url('/Content/images/inv_P_67.png'); }
+.inv-tile-q { background-image: url('/Content/images/inv_Q_67.png'); }
+.inv-tile-r { background-image: url('/Content/images/inv_R_67.png'); }
+.inv-tile-s { background-image: url('/Content/images/inv_S_67.png'); }
+.inv-tile-t { background-image: url('/Content/images/inv_T_67.png'); }
+.inv-tile-u { background-image: url('/Content/images/inv_U_67.png'); }
+.inv-tile-v { background-image: url('/Content/images/inv_V_67.png'); }
+.inv-tile-w { background-image: url('/Content/images/inv_W_67.png'); }
+.inv-tile-x { background-image: url('/Content/images/inv_X_67.png'); }
+.inv-tile-y { background-image: url('/Content/images/inv_Y_67.png'); }
+.inv-tile-z { background-image: url('/Content/images/inv_Z_67.png'); }
+.inv-tile-unknown { background-image: url('/Content/images/inv_blank_67.png'); }
+.inv-tile-search { background-image: url('/Content/images/inv_search_67.png'); }
+
+.tile-dimmed { opacity: 0.5;}
 
 .footer {
     clear: both;

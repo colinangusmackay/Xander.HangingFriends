@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Xander Hung Friends Word Finder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="Content/jquery.mobile-1.2.0.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
 </head>
@@ -13,55 +13,22 @@
         </div>
         <div data-role="content">
             <div class="centring-container">
-                <div class="answer-rack">
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
-                    <div class="tile unknown-tile"></div>
+                <div class="answer-rack" data-bind="foreach: individualCorrectLetters">
+                    <div data-bind="css: cssClass, click:clickAnswerTile"></div>
                 </div>
             </div>
             <div class="centring-container">
-                <div class="letter-rack">
-                    <div class="rack-line">
-                        <span class="tile tile-a"></span>
-                        <span class="tile tile-b"></span>
-                        <span class="tile tile-c"></span>
-                        <span class="tile tile-d"></span>
-                        <span class="tile tile-e"></span>
-                        <span class="tile tile-f"></span>
-                        <span class="tile tile-g"></span>
-                    </div>
-                    <div class="rack-line">
-                        <span class="tile tile-h"></span>
-                        <span class="tile tile-i"></span>
-                        <span class="tile tile-j"></span>
-                        <span class="tile tile-k"></span>
-                        <span class="tile tile-l"></span>
-                        <span class="tile tile-m"></span>
-                        <span class="tile tile-n"></span>
-                    </div>
-                    <div class="rack-line">
-                        <span class="tile tile-o"></span>
-                        <span class="tile tile-p"></span>
-                        <span class="tile tile-q"></span>
-                        <span class="tile tile-r"></span>
-                        <span class="tile tile-s"></span>
-                        <span class="tile tile-t"></span>
-                        <span class="tile tile-u"></span>
-                    </div>
-                    <div class="rack-line">
-                        <span class="tile tile-v"></span>
-                        <span class="tile tile-w"></span>
-                        <span class="tile tile-x"></span>
-                        <span class="tile tile-y"></span>
-                        <span class="tile tile-z"></span>
-                    </div>
+                <div class="letter-rack" data-bind="foreach: individualGuessedLetters">
+                    <!-- ko ifnot: isSearch --><span data-bind="css: cssClass, click: clickGuessedTile"></span><!-- /ko -->
+                    <!-- ko if: isSearch --><span data-bind="click: clickSearchTile" class="tile tile-search"></span><!-- /ko -->
                 </div>
             </div>
+        </div>
+        <div data-bind="if:hasResults">
+            <span>Results</span>
+            <ul data-bind="foreach : results()">
+                <li data-bind="html: $data"></li>
+            </ul>
         </div>
         <div data-theme="e" data-role="footer" data-position="fixed">
             <a href="about.html">About Xander Hung Friends Word Finder</a>
