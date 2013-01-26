@@ -2,6 +2,10 @@
     var words = "";
     loadWords();
 
+    $("#reset").click(function() {
+        window.location = "/index.html";
+    });
+
     var tile = function (letter, viewModel, container) {
         this.letter = ko.observable(letter);
         this.isGuessedLetter = ko.observable(false);
