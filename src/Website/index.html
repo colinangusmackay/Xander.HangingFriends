@@ -4,8 +4,8 @@
     <title>Xander Hanging Friends Word Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" sizes="144x144" href="/Content/images/favicon-metro.png" />
-    <link rel="icon" href="/Content/images/favicon-metro.png"/>
-    <meta name="msapplication-TileColor" content="#fadb4e"/>
+    <link rel="icon" href="/Content/images/favicon-metro.png" />
+    <meta name="msapplication-TileColor" content="#fadb4e" />
     <meta name="msapplication-TileImage" content="/Content/images/favicon-metro.png" />
     <link href="Content/jquery.mobile-1.2.0.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
             <div class="centring-container">
                 <div data-role="controlgroup" data-type="horizontal">
                     <a href="" data-role="button" data-icon="refresh" data-theme="e" id="reset">Reset</a>
-                    <a href="help.html" data-role="button" data-icon="check" data-theme="e" data-rel="dialog" >Help</a>
+                    <a href="help.html" data-role="button" data-icon="check" data-theme="e" data-rel="dialog">Help</a>
                     <a href="about.html" data-role="button" data-icon="info" data-rel="dialog" data-transition="pop" data-theme="e">About</a>
                 </div>
             </div>
@@ -44,6 +44,10 @@
             <ul data-bind="foreach : results()">
                 <li data-bind="html: $data"></li>
             </ul>
+        </div>
+        <div data-role="popup" id="not-enough-tiles" data-position-to="window" data-transition="pop" class="ui-content" data-theme="e">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <p>There are not enough tiles on the answer rack. You must have at least 4 tiles on the answer rack to search.</p>
         </div>
     </div>
     <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js"></script>

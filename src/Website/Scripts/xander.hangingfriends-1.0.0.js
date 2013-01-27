@@ -5,6 +5,7 @@
     $("#reset").click(function() {
         window.location = "/index.html";
     });
+    $("#not-enough-tiles").popup();
 
     var tile = function (letter, viewModel, container) {
         this.letter = ko.observable(letter);
@@ -55,8 +56,13 @@
 
         this.clickSearchTile = function () {
             this.viewModel.hasResults(false);
-            
             this.viewModel.results.removeAll();
+            if (!this.viewModel.isEnoughGuessedLetters()) {
+                console.log("not enough tiles");
+                $("#not-enough-tiles").popup("open");
+                return;
+            }
+
             var regex = buildRegEx();
             var result = words.match(regex);
             this.viewModel.fullResults = result;
@@ -150,6 +156,9 @@
         this.results = ko.observableArray();
         this.fullResults = [];
         this.hasResults = ko.observable(false);
+        this.isEnoughGuessedLetters = function () {
+            return (this.individualCorrectLetters[3].letter() !== "not-used")
+        };
     };
 
     ko.applyBindings(new viewModel());
