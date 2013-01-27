@@ -12,17 +12,16 @@
 </head>
 <body>
     <div data-role="page" id="page1">
-        <div data-theme="e" data-role="header" data-position="fixed">
+        <div data-theme="e" data-role="header">
             <h3>Hanging Friends Word Finder</h3>
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                <li><a href="" data-role="button" data-icon="refresh" data-theme="e" id="reset">Reset</a></li>
+                <li><a href="help.html" data-role="button" data-icon="check" data-theme="e" data-rel="dialog">Help</a></li>
+                <li><a href="about.html" data-role="button" data-icon="info" data-rel="dialog" data-transition="pop" data-theme="e">About</a></li>
+            </ul></div>
         </div>
         <div data-role="content">
-            <div class="centring-container">
-                <div data-role="controlgroup" data-type="horizontal">
-                    <a href="" data-role="button" data-icon="refresh" data-theme="e" id="reset">Reset</a>
-                    <a href="help.html" data-role="button" data-icon="check" data-theme="e" data-rel="dialog">Help</a>
-                    <a href="about.html" data-role="button" data-icon="info" data-rel="dialog" data-transition="pop" data-theme="e">About</a>
-                </div>
-            </div>
             <div class="centring-container">
                 <div class="answer-rack" data-bind="foreach: individualCorrectLetters">
                     <div data-bind="css: cssClass, click:clickAnswerTile"></div>

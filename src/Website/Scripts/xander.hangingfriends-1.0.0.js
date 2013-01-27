@@ -1,4 +1,5 @@
-﻿var words = "";
+﻿
+var words = "";
 $(function () {
     loadWords();
 
@@ -17,6 +18,8 @@ $(function () {
 });
 
 var tile = function (letter, theViewModel, container) {
+    
+    // data
     this.letter = ko.observable(letter);
     this.isGuessedLetter = ko.observable(false);
     this.isHighlighted = ko.observable(null);
@@ -46,6 +49,14 @@ var tile = function (letter, theViewModel, container) {
 
     };
 
+    this.setIsGuessedLetter = function (state) {
+        if (this.letter() === "unknown")
+            this.isGuessedLetter(false);
+        else
+            this.isGuessedLetter(state);
+    };
+
+    // events
     this.clickGuessedTile = function () {
         if (theViewModel.currentLetter() === this.letter()) {
             this.removeHighlight();
@@ -62,13 +73,6 @@ var tile = function (letter, theViewModel, container) {
             theViewModel.currentLetter(this.letter());
             this.setIsGuessedLetter(true);
         }
-    };
-
-    this.setIsGuessedLetter = function (state) {
-        if (this.letter() === "unknown")
-            this.isGuessedLetter(false);
-        else
-            this.isGuessedLetter(state);
     };
 
     this.clickSearchTile = function () {
