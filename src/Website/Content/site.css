@@ -28,40 +28,40 @@
 
 @media (min-width:240px) {
     .answer-rack {
-        width:252px;
+        width:240px;
     }
     .letter-rack {
-        width: 221px;
+        width: 210px;
     }
     .tile
     {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
     }
 }
 
 @media (min-width: 400px)
 {
     .answer-rack {
-        width:396px;
+        width:368px;
     }
     .letter-rack {
-        width: 352px;
+        width: 322px;
     }
     .tile
     {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
     }
 }
 
 @media (min-width: 640px)
 {
     .answer-rack {
-        width:580px;
+        width:584px;
     }
     .letter-rack {
-        width: 509px;
+        width: 513px;
     }
     .tile
     {
