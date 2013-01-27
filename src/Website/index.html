@@ -7,6 +7,7 @@
     <link rel="icon" href="/Content/images/favicon-metro.png" />
     <meta name="msapplication-TileColor" content="#fadb4e" />
     <meta name="msapplication-TileImage" content="/Content/images/favicon-metro.png" />
+    <link href="Content/sunny/jquery-ui-1.10.0.custom.min.css" rel="stylesheet" />
     <link href="Content/jquery.mobile-1.2.0.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
 </head>
@@ -16,25 +17,28 @@
             <h3>Hanging Friends Word Finder</h3>
             <div data-role="navbar" data-iconpos="left">
                 <ul>
-                <li><a href="" data-role="button" data-icon="refresh" data-theme="e" id="reset">Reset</a></li>
-                <li><a href="help.html" data-role="button" data-icon="check" data-theme="e" data-rel="dialog">Help</a></li>
-                <li><a href="about.html" data-role="button" data-icon="info" data-rel="dialog" data-transition="pop" data-theme="e">About</a></li>
-            </ul></div>
+                    <li><a href="#" data-role="button" data-icon="refresh" data-theme="e" id="reset">Reset</a></li>
+                    <li><a href="help.html" data-role="button" data-icon="check" data-theme="e" data-rel="dialog">Help</a></li>
+                    <li><a href="about.html" data-role="button" data-icon="info" data-rel="dialog" data-transition="pop" data-theme="e">About</a></li>
+                </ul>
+            </div>
         </div>
         <div data-role="content">
-            <div class="centring-container">
-                <div class="answer-rack" data-bind="foreach: individualCorrectLetters">
-                    <div data-bind="css: cssClass, click:clickAnswerTile"></div>
+            <div id="drag-drop-container">
+                <div class="centring-container">
+                    <div class="answer-rack" data-bind="foreach: individualCorrectLetters">
+                        <div data-bind="css: cssClass, click:clickAnswerTile"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="centring-container">
-                <div class="letter-rack" data-bind="foreach: individualGuessedLetters">
-                    <!-- ko ifnot: isSearch -->
-                    <span data-bind="css: cssClass, click: clickGuessedTile"></span>
-                    <!-- /ko -->
-                    <!-- ko if: isSearch -->
-                    <span data-bind="click: clickSearchTile" class="tile tile-search"></span>
-                    <!-- /ko -->
+                <div class="centring-container">
+                    <div class="letter-rack" data-bind="foreach: individualGuessedLetters">
+                        <!-- ko ifnot: isSearch -->
+                        <span data-bind="css: cssClass, click: clickGuessedTile"></span>
+                        <!-- /ko -->
+                        <!-- ko if: isSearch -->
+                        <span data-bind="click: clickSearchTile" class="tile tile-search"></span>
+                        <!-- /ko -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,6 +54,7 @@
         </div>
     </div>
     <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.10.0.custom.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.mobile-1.2.0.min.js"></script>
     <script type="text/javascript" src="Scripts/knockout-2.2.1.js"></script>
     <script type="text/javascript" src="Scripts/xander.hangingfriends-1.0.0.js"></script>

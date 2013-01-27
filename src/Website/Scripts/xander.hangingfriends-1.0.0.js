@@ -4,9 +4,27 @@ $(function () {
     loadWords();
 
     $("#reset").click(function () {
-        window.location = "/index.html";
+        window.location = "/";
     });
     $("#not-enough-tiles").popup();
+
+    $(".drag-source").draggable({
+        containment: "#drag-drop-container",
+        scroll: false,
+        revert: "invalid",
+        helper: "clone"
+    });
+
+    $(".drop-target").droppable({
+        accept: ".drag-source",
+        drop: function (event, ui) {
+            var source = ko.dataFor(ui.draggable.get(0));
+            var target = ko.dataFor(this);
+            source.dragTo(target)
+        }
+    });
+
+
     function loadWords() {
         $.ajax({
             url: "/data/words.txt",
@@ -31,7 +49,12 @@ var tile = function (letter, theViewModel, container) {
         var invertedPrefix = (this.isGuessedLetter() ? "inv-" : "");
         var tileName = "tile-" + this.letter().toLowerCase();
         var dimToggle = (this.isHighlighted() === false ? " tile-dimmed" : "");
-        var result = "tile " + invertedPrefix + tileName + dimToggle;
+        var dragDrop = (this.container === theViewModel.individualCorrectLetters)
+            ? " drop-target"
+            : ((this.container === theViewModel.individualGuessedLetters)
+                ? " drag-source"
+                : "");
+        var result = "tile " + invertedPrefix + tileName + dimToggle + dragDrop;
         return result;
     }, this);
 
@@ -57,6 +80,14 @@ var tile = function (letter, theViewModel, container) {
     };
 
     // events
+
+    this.dragTo = function (target) {
+        theViewModel.currentLetter("");
+        target.letter("not-used");
+        this.clickGuessedTile();
+        target.clickAnswerTile();
+    };
+    
     this.clickGuessedTile = function () {
         if (theViewModel.currentLetter() === this.letter()) {
             this.removeHighlight();

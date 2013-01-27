@@ -129,3 +129,7 @@
 .inv-tile-search { background-image: url('/Content/images/inv_search_67.png'); }
 
 .tile-dimmed { opacity: 0.5;}
+
+.drag-source {
+    cursor: pointer;
+}
