@@ -20,7 +20,7 @@ $(function () {
         drop: function (event, ui) {
             var source = ko.dataFor(ui.draggable.get(0));
             var target = ko.dataFor(this);
-            source.dragTo(target)
+            source.dragTo(target);
         }
     });
 
@@ -117,6 +117,8 @@ var tile = function (letter, theViewModel, container) {
 
         var regex = buildRegEx();
         var result = words.match(regex);
+        if (result === null)
+            result = [];
         this.viewModel.fullResults = result;
         var viewModelResults = this.viewModel.results;
         ko.utils.arrayForEach(result, function (item) {
@@ -129,7 +131,15 @@ var tile = function (letter, theViewModel, container) {
                 viewModelResults.push(item);
         });
         var hasResults = viewModelResults().length > 0;
+        this.viewModel.totalResults(result.length);
         this.viewModel.hasResults(hasResults);
+
+        if (!hasResults)
+            $("#no-results-found").popup("open");
+        else if (result.length > 200)
+            $("#too-many-results").popup("open");
+
+
 
         function buildRegEx() {
             var searchLetters = buildSearchLetters();
@@ -201,6 +211,7 @@ var viewModel = function () {
     this.individualGuessedLetters.push(searchTile);
 
     this.results = ko.observableArray();
+    this.totalResults = ko.observable(0);
     this.fullResults = [];
     this.hasResults = ko.observable(false);
     this.isEnoughGuessedLetters = function () {

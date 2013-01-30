@@ -52,6 +52,14 @@
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
             <p>There are not enough tiles on the answer rack. You must have at least 4 tiles on the answer rack to search.</p>
         </div>
+        <div data-role="popup" id="no-results-found" data-position-to="window" data-transition="pop" class="ui-content" data-theme="e">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <p>That combination did not return any values.</p>
+        </div>
+        <div data-role="popup" id="too-many-results" data-position-to="window" data-transition="pop" class="ui-content" data-theme="e">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <p><span data-bind="text: totalResults"></span> possible words were found. Showing the first 200. Make more guesses to narrow the results to a more manageable level.</p>
+        </div>
     </div>
     <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery-ui-1.10.0.custom.min.js"></script>
