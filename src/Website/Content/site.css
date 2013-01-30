@@ -17,13 +17,14 @@
 }
 .tile {
     margin: 1px;
-    background-size: cover;
     display: inline-block;
 }
 
-.tile-not-used {
+.tile.tile-not-used {
     background-color: #b0e0e6;
     background-image: url('/Content/images/not-used.png');
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 @media (min-width:240px) {
@@ -37,7 +38,66 @@
     {
         width: 24px;
         height: 24px;
+        background: url(/Content/images/sprite-24.png) no-repeat top left;
     }
+
+    .inv-tile-a{ background-position: 0 0; width: 24px; height: 24px; } 
+    .inv-tile-b{ background-position: 0 -25px; width: 24px; height: 24px; } 
+    .inv-tile-c{ background-position: 0 -50px; width: 24px; height: 24px; } 
+    .inv-tile-d{ background-position: 0 -75px; width: 24px; height: 24px; } 
+    .inv-tile-e{ background-position: 0 -100px; width: 24px; height: 24px; } 
+    .inv-tile-f{ background-position: 0 -125px; width: 24px; height: 24px; } 
+    .inv-tile-g{ background-position: 0 -150px; width: 24px; height: 24px; } 
+    .inv-tile-h{ background-position: 0 -175px; width: 24px; height: 24px; } 
+    .inv-tile-i{ background-position: 0 -200px; width: 24px; height: 24px; } 
+    .inv-tile-j{ background-position: 0 -225px; width: 24px; height: 24px; } 
+    .inv-tile-k{ background-position: 0 -250px; width: 24px; height: 24px; } 
+    .inv-tile-l{ background-position: 0 -275px; width: 24px; height: 24px; } 
+    .inv-tile-m{ background-position: 0 -300px; width: 24px; height: 24px; } 
+    .inv-tile-n{ background-position: 0 -325px; width: 24px; height: 24px; } 
+    .inv-tile-o{ background-position: 0 -350px; width: 24px; height: 24px; } 
+    .inv-tile-p{ background-position: 0 -375px; width: 24px; height: 24px; } 
+    .inv-tile-q{ background-position: 0 -400px; width: 24px; height: 24px; } 
+    .inv-tile-r{ background-position: 0 -425px; width: 24px; height: 24px; } 
+    .inv-tile-s{ background-position: 0 -450px; width: 24px; height: 24px; } 
+    .inv-tile-search{ background-position: 0 -475px; width: 24px; height: 24px; } 
+    .inv-tile-t{ background-position: 0 -500px; width: 24px; height: 24px; } 
+    .inv-tile-u{ background-position: 0 -525px; width: 24px; height: 24px; } 
+    .inv-tile-v{ background-position: 0 -550px; width: 24px; height: 24px; } 
+    .inv-tile-w{ background-position: 0 -575px; width: 24px; height: 24px; } 
+    .inv-tile-x{ background-position: 0 -600px; width: 24px; height: 24px; } 
+    .inv-tile-y{ background-position: 0 -625px; width: 24px; height: 24px; } 
+    .inv-tile-z{ background-position: 0 -650px; width: 24px; height: 24px; } 
+    .inv-unknown-tile{ background-position: 0 -675px; width: 24px; height: 24px; } 
+    .tile-a{ background-position: 0 -700px; width: 24px; height: 24px; } 
+    .tile-b{ background-position: 0 -725px; width: 24px; height: 24px; } 
+    .tile-c{ background-position: 0 -750px; width: 24px; height: 24px; } 
+    .tile-d{ background-position: 0 -775px; width: 24px; height: 24px; } 
+    .tile-e{ background-position: 0 -800px; width: 24px; height: 24px; } 
+    .tile-f{ background-position: 0 -825px; width: 24px; height: 24px; } 
+    .tile-g{ background-position: 0 -850px; width: 24px; height: 24px; } 
+    .tile-h{ background-position: 0 -875px; width: 24px; height: 24px; } 
+    .tile-i{ background-position: 0 -900px; width: 24px; height: 24px; } 
+    .tile-j{ background-position: 0 -925px; width: 24px; height: 24px; } 
+    .tile-k{ background-position: 0 -950px; width: 24px; height: 24px; } 
+    .tile-l{ background-position: 0 -975px; width: 24px; height: 24px; } 
+    .tile-m{ background-position: 0 -1000px; width: 24px; height: 24px; } 
+    .tile-n{ background-position: 0 -1025px; width: 24px; height: 24px; } 
+    .tile-o{ background-position: 0 -1050px; width: 24px; height: 24px; } 
+    .tile-p{ background-position: 0 -1075px; width: 24px; height: 24px; } 
+    .tile-q{ background-position: 0 -1100px; width: 24px; height: 24px; } 
+    .tile-r{ background-position: 0 -1125px; width: 24px; height: 24px; } 
+    .tile-s{ background-position: 0 -1150px; width: 24px; height: 24px; } 
+    .tile-search{ background-position: 0 -1175px; width: 24px; height: 24px; } 
+    .tile-t{ background-position: 0 -1200px; width: 24px; height: 24px; } 
+    .tile-u{ background-position: 0 -1225px; width: 24px; height: 24px; } 
+    .tile-unknown{ background-position: 0 -1250px; width: 24px; height: 24px; } 
+    .tile-v{ background-position: 0 -1275px; width: 24px; height: 24px; } 
+    .tile-w{ background-position: 0 -1300px; width: 24px; height: 24px; } 
+    .tile-x{ background-position: 0 -1325px; width: 24px; height: 24px; } 
+    .tile-y{ background-position: 0 -1350px; width: 24px; height: 24px; } 
+    .tile-z{ background-position: 0 -1375px; width: 24px; height: 24px; } 
+
 }
 
 @media (min-width: 400px)
@@ -52,7 +112,66 @@
     {
         width: 40px;
         height: 40px;
+        background: url(/Content/images/sprite-40.png) no-repeat top left;
     }
+
+    .inv-tile-a{ background-position: 0 0;  } 
+    .inv-tile-b{ background-position: 0 -41px;  } 
+    .inv-tile-c{ background-position: 0 -82px;  } 
+    .inv-tile-d{ background-position: 0 -123px;  } 
+    .inv-tile-e{ background-position: 0 -164px;  } 
+    .inv-tile-f{ background-position: 0 -205px;  } 
+    .inv-tile-g{ background-position: 0 -246px;  } 
+    .inv-tile-h{ background-position: 0 -287px;  } 
+    .inv-tile-i{ background-position: 0 -328px;  } 
+    .inv-tile-j{ background-position: 0 -369px;  } 
+    .inv-tile-k{ background-position: 0 -410px;  } 
+    .inv-tile-l{ background-position: 0 -451px;  } 
+    .inv-tile-m{ background-position: 0 -492px;  } 
+    .inv-tile-n{ background-position: 0 -533px;  } 
+    .inv-tile-o{ background-position: 0 -574px;  } 
+    .inv-tile-p{ background-position: 0 -615px;  } 
+    .inv-tile-q{ background-position: 0 -656px;  } 
+    .inv-tile-r{ background-position: 0 -697px;  } 
+    .inv-tile-s{ background-position: 0 -738px;  } 
+    .inv-tile-search{ background-position: 0 -779px;  } 
+    .inv-tile-t{ background-position: 0 -820px;  } 
+    .inv-tile-u{ background-position: 0 -861px;  } 
+    .inv-tile-v{ background-position: 0 -902px;  } 
+    .inv-tile-w{ background-position: 0 -943px;  } 
+    .inv-tile-x{ background-position: 0 -984px;  } 
+    .inv-tile-y{ background-position: 0 -1025px;  } 
+    .inv-tile-z{ background-position: 0 -1066px;  } 
+    .inv-unknown-tile{ background-position: 0 -1107px;  } 
+    .tile-a{ background-position: 0 -1148px;  } 
+    .tile-b{ background-position: 0 -1189px;  } 
+    .tile-c{ background-position: 0 -1230px;  } 
+    .tile-d{ background-position: 0 -1271px;  } 
+    .tile-e{ background-position: 0 -1312px;  } 
+    .tile-f{ background-position: 0 -1353px;  } 
+    .tile-g{ background-position: 0 -1394px;  } 
+    .tile-h{ background-position: 0 -1435px;  } 
+    .tile-i{ background-position: 0 -1476px;  } 
+    .tile-j{ background-position: 0 -1517px;  } 
+    .tile-k{ background-position: 0 -1558px;  } 
+    .tile-l{ background-position: 0 -1599px;  } 
+    .tile-m{ background-position: 0 -1640px;  } 
+    .tile-n{ background-position: 0 -1681px;  } 
+    .tile-o{ background-position: 0 -1722px;  } 
+    .tile-p{ background-position: 0 -1763px;  } 
+    .tile-q{ background-position: 0 -1804px;  } 
+    .tile-r{ background-position: 0 -1845px;  } 
+    .tile-s{ background-position: 0 -1886px;  } 
+    .tile-search{ background-position: 0 -1927px;  } 
+    .tile-t{ background-position: 0 -1968px;  } 
+    .tile-u{ background-position: -41px 0;  } 
+    .tile-unknown{ background-position: -41px -41px;  } 
+    .tile-v{ background-position: -41px -82px;  } 
+    .tile-w{ background-position: -41px -123px;  } 
+    .tile-x{ background-position: -41px -164px;  } 
+    .tile-y{ background-position: -41px -205px;  } 
+    .tile-z{ background-position: -41px -246px;  } 
+
 }
 
 @media (min-width: 640px)
@@ -67,66 +186,65 @@
     {
         width: 67px;
         height: 67px;
+        background: url(/Content/images/sprite-67.png) no-repeat top left;
     }
+    .inv-tile-a{ background-position: 0 0; } 
+    .inv-tile-b{ background-position: 0 -68px; } 
+    .inv-tile-c{ background-position: 0 -136px; } 
+    .inv-tile-d{ background-position: 0 -204px; } 
+    .inv-tile-e{ background-position: 0 -272px; } 
+    .inv-tile-f{ background-position: 0 -340px; } 
+    .inv-tile-g{ background-position: 0 -408px; } 
+    .inv-tile-h{ background-position: 0 -476px; } 
+    .inv-tile-i{ background-position: 0 -544px; } 
+    .inv-tile-j{ background-position: 0 -612px; } 
+    .inv-tile-k{ background-position: 0 -680px; } 
+    .inv-tile-l{ background-position: 0 -748px; } 
+    .inv-tile-m{ background-position: 0 -816px; } 
+    .inv-tile-n{ background-position: 0 -884px; } 
+    .inv-tile-o{ background-position: 0 -952px; } 
+    .inv-tile-p{ background-position: 0 -1020px; } 
+    .inv-tile-q{ background-position: 0 -1088px; } 
+    .inv-tile-r{ background-position: 0 -1156px; } 
+    .inv-tile-s{ background-position: 0 -1224px; } 
+    .inv-tile-search{ background-position: 0 -1292px; } 
+    .inv-tile-t{ background-position: 0 -1360px; } 
+    .inv-tile-u{ background-position: 0 -1428px; } 
+    .inv-tile-v{ background-position: 0 -1496px; } 
+    .inv-tile-w{ background-position: 0 -1564px; } 
+    .inv-tile-x{ background-position: 0 -1632px; } 
+    .inv-tile-y{ background-position: 0 -1700px; } 
+    .inv-tile-z{ background-position: 0 -1768px; } 
+    .inv-unknown-tile{ background-position: 0 -1836px; } 
+    .tile-a{ background-position: 0 -1904px; } 
+    .tile-b{ background-position: 0 -1972px; } 
+    .tile-c{ background-position: -68px 0; } 
+    .tile-d{ background-position: -68px -68px; } 
+    .tile-e{ background-position: -68px -136px; } 
+    .tile-f{ background-position: -68px -204px; } 
+    .tile-g{ background-position: -68px -272px; } 
+    .tile-h{ background-position: -68px -340px; } 
+    .tile-i{ background-position: -68px -408px; } 
+    .tile-j{ background-position: -68px -476px; } 
+    .tile-k{ background-position: -68px -544px; } 
+    .tile-l{ background-position: -68px -612px; } 
+    .tile-m{ background-position: -68px -680px; } 
+    .tile-n{ background-position: -68px -748px; } 
+    .tile-o{ background-position: -68px -816px; } 
+    .tile-p{ background-position: -68px -884px; } 
+    .tile-q{ background-position: -68px -952px; } 
+    .tile-r{ background-position: -68px -1020px; } 
+    .tile-s{ background-position: -68px -1088px; } 
+    .tile-search{ background-position: -68px -1156px; } 
+    .tile-t{ background-position: -68px -1224px; } 
+    .tile-u{ background-position: -68px -1292px; } 
+    .tile-unknown{ background-position: -68px -1360px; } 
+    .tile-v{ background-position: -68px -1428px; } 
+    .tile-w{ background-position: -68px -1496px; } 
+    .tile-x{ background-position: -68px -1564px; } 
+    .tile-y{ background-position: -68px -1632px; } 
+    .tile-z{ background-position: -68px -1700px; }
 }
-
-.tile-a { background-image: url('/Content/images/A_67.png'); }
-.tile-b { background-image: url('/Content/images/B_67.png'); }
-.tile-c { background-image: url('/Content/images/C_67.png'); }
-.tile-d { background-image: url('/Content/images/D_67.png'); }
-.tile-e { background-image: url('/Content/images/E_67.png'); }
-.tile-f { background-image: url('/Content/images/F_67.png'); }
-.tile-g { background-image: url('/Content/images/G_67.png'); }
-.tile-h { background-image: url('/Content/images/H_67.png'); }
-.tile-i { background-image: url('/Content/images/I_67.png'); }
-.tile-j { background-image: url('/Content/images/J_67.png'); }
-.tile-k { background-image: url('/Content/images/K_67.png'); }
-.tile-l { background-image: url('/Content/images/L_67.png'); }
-.tile-m { background-image: url('/Content/images/M_67.png'); }
-.tile-n { background-image: url('/Content/images/N_67.png'); }
-.tile-o { background-image: url('/Content/images/O_67.png'); }
-.tile-p { background-image: url('/Content/images/P_67.png'); }
-.tile-q { background-image: url('/Content/images/Q_67.png'); }
-.tile-r { background-image: url('/Content/images/R_67.png'); }
-.tile-s { background-image: url('/Content/images/S_67.png'); }
-.tile-t { background-image: url('/Content/images/T_67.png'); }
-.tile-u { background-image: url('/Content/images/U_67.png'); }
-.tile-v { background-image: url('/Content/images/V_67.png'); }
-.tile-w { background-image: url('/Content/images/W_67.png'); }
-.tile-x { background-image: url('/Content/images/X_67.png'); }
-.tile-y { background-image: url('/Content/images/Y_67.png'); }
-.tile-z { background-image: url('/Content/images/Z_67.png'); }
-.tile-unknown { background-image: url('/Content/images/blank_67.png'); }
-.tile-search { background-image: url('/Content/images/search_67.png'); }
-
-.inv-tile-a { background-image: url('/Content/images/inv_A_67.png'); }
-.inv-tile-b { background-image: url('/Content/images/inv_B_67.png'); }
-.inv-tile-c { background-image: url('/Content/images/inv_C_67.png'); }
-.inv-tile-d { background-image: url('/Content/images/inv_D_67.png'); }
-.inv-tile-e { background-image: url('/Content/images/inv_E_67.png'); }
-.inv-tile-f { background-image: url('/Content/images/inv_F_67.png'); }
-.inv-tile-g { background-image: url('/Content/images/inv_G_67.png'); }
-.inv-tile-h { background-image: url('/Content/images/inv_H_67.png'); }
-.inv-tile-i { background-image: url('/Content/images/inv_I_67.png'); }
-.inv-tile-j { background-image: url('/Content/images/inv_J_67.png'); }
-.inv-tile-k { background-image: url('/Content/images/inv_K_67.png'); }
-.inv-tile-l { background-image: url('/Content/images/inv_L_67.png'); }
-.inv-tile-m { background-image: url('/Content/images/inv_M_67.png'); }
-.inv-tile-n { background-image: url('/Content/images/inv_N_67.png'); }
-.inv-tile-o { background-image: url('/Content/images/inv_O_67.png'); }
-.inv-tile-p { background-image: url('/Content/images/inv_P_67.png'); }
-.inv-tile-q { background-image: url('/Content/images/inv_Q_67.png'); }
-.inv-tile-r { background-image: url('/Content/images/inv_R_67.png'); }
-.inv-tile-s { background-image: url('/Content/images/inv_S_67.png'); }
-.inv-tile-t { background-image: url('/Content/images/inv_T_67.png'); }
-.inv-tile-u { background-image: url('/Content/images/inv_U_67.png'); }
-.inv-tile-v { background-image: url('/Content/images/inv_V_67.png'); }
-.inv-tile-w { background-image: url('/Content/images/inv_W_67.png'); }
-.inv-tile-x { background-image: url('/Content/images/inv_X_67.png'); }
-.inv-tile-y { background-image: url('/Content/images/inv_Y_67.png'); }
-.inv-tile-z { background-image: url('/Content/images/inv_Z_67.png'); }
-.inv-tile-unknown { background-image: url('/Content/images/inv_blank_67.png'); }
-.inv-tile-search { background-image: url('/Content/images/inv_search_67.png'); }
 
 .tile-dimmed { opacity: 0.5;}
 
