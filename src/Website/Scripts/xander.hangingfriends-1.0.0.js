@@ -139,19 +139,22 @@ var tile = function (letter, theViewModel, container) {
         else if (result.length > 200)
             $("#too-many-results").popup("open");
 
-
-
         function buildRegEx() {
             var searchLetters = buildSearchLetters();
-            var letters = ko.utils.arrayMap(theViewModel.individualCorrectLetters, function (item) {
-                if (item.letter().length === 1)
-                    return item.letter();
-                else if (item.letter() === "unknown")
-                    return searchLetters;
-                return "";
-            });
+            var lastVowel = theViewModel.lastVowelIndexInAnswerRack();
+            var vowellessSearchLetters = searchLetters.replace("a", "").replace("e", "").replace("i", "").replace("o", "").replace("u", "");
             var regEx = "^";
-            ko.utils.arrayForEach(letters, function (item) { regEx += item; });
+            for (var i = 0; i < theViewModel.individualCorrectLetters.length; i++) {
+                var currentTile = theViewModel.individualCorrectLetters[i];
+                if (currentTile.letter().length === 1) {
+                    regEx += currentTile.letter();
+                } else if (currentTile.letter() === "unknown") {
+                    if (i > lastVowel)
+                        regEx += vowellessSearchLetters;
+                    else
+                        regEx += searchLetters;
+                }
+            }
             regEx += "$";
             var pattern = new RegExp(regEx, "gm");
             return pattern;
@@ -216,6 +219,22 @@ var viewModel = function () {
     this.hasResults = ko.observable(false);
     this.isEnoughGuessedLetters = function () {
         return (this.individualCorrectLetters[3].letter() !== "not-used");
+    };
+
+    this.lastVowelIndexInAnswerRack = function() {
+        for (var i = 7; i >= 0; i--) {
+            var currentTile = this.individualCorrectLetters[i];
+            var letter = currentTile.letter();
+            switch (letter) {
+                case "a":
+                case 'e':
+                case "i": 
+                case "o":
+                case "u":
+                return i;
+            }
+        }
+        return i;
     };
 };
 
