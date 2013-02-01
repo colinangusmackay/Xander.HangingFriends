@@ -251,3 +251,14 @@
 .drag-source {
     cursor: pointer;
 }
+
+.results ul{
+    columns: 8em;
+    -moz-columns: 8em;
+    -webkit-columns: 8em;
+}
+
+.results ul li {
+    width: 8em;
+    font-family: Consolas, Lucida Console, Courier New, Courier, monospace;
+}
