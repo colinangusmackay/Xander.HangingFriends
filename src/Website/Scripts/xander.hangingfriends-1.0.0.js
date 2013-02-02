@@ -1,5 +1,4 @@
-﻿
-var words = "";
+﻿var words = "";
 $(function () {
     loadWords();
 
@@ -49,7 +48,7 @@ var tile = function (letter, theViewModel, container) {
         var invertedPrefix = (this.isGuessedLetter() ? "inv-" : "");
         var tileName = "tile-" + this.letter().toLowerCase();
         var dimToggle = (this.isHighlighted() === false ? " tile-dimmed" : "");
-        var dragDrop = (this.container === theViewModel.individualCorrectLetters)
+        var dragDrop = (this.container === theViewModel.answerRack)
             ? " drop-target"
             : ((this.container === theViewModel.individualGuessedLetters)
                 ? " drag-source"
@@ -95,7 +94,7 @@ var tile = function (letter, theViewModel, container) {
             if (this.letter() === "unknown") {
                 this.setIsGuessedLetter(false);
             } else {
-                var answerTile = ko.utils.arrayFirst(theViewModel.individualCorrectLetters, function (item) { return this.letter() === item.letter(); }, this);
+                var answerTile = ko.utils.arrayFirst(theViewModel.answerRack, function (item) { return this.letter() === item.letter(); }, this);
                 if (answerTile === null)
                     this.setIsGuessedLetter(false);
             }
@@ -146,8 +145,8 @@ var tile = function (letter, theViewModel, container) {
             var lastVowel = theViewModel.lastVowelIndexInAnswerRack();
             var vowellessSearchLetters = searchLetters.replace("a", "").replace("e", "").replace("i", "").replace("o", "").replace("u", "");
             var regEx = "^";
-            for (var i = 0; i < theViewModel.individualCorrectLetters.length; i++) {
-                var currentTile = theViewModel.individualCorrectLetters[i];
+            for (var i = 0; i < theViewModel.answerRack.length; i++) {
+                var currentTile = theViewModel.answerRack[i];
                 if (currentTile.letter().length === 1) {
                     regEx += currentTile.letter();
                 } else if (currentTile.letter() === "unknown") {
@@ -183,15 +182,15 @@ var tile = function (letter, theViewModel, container) {
         if ((this.letter() === "not-used") || (this.letter() !== theViewModel.currentLetter()))
             this.letter(theViewModel.currentLetter());
         else if (this.letter() === theViewModel.currentLetter()) {
-            var index = ko.utils.arrayIndexOf(this.viewModel.individualCorrectLetters, this);
-            if ((index < 7) && (this.viewModel.individualCorrectLetters[index + 1].letter() != "not-used"))
+            var index = ko.utils.arrayIndexOf(this.viewModel.answerRack, this);
+            if ((index < 7) && (this.viewModel.answerRack[index + 1].letter() != "not-used"))
                 this.letter("unknown");
             else
                 this.letter("not-used");
         }
         var isDone = false;
         var currentTile = this;
-        ko.utils.arrayForEach(this.viewModel.individualCorrectLetters, function (item) {
+        ko.utils.arrayForEach(this.viewModel.answerRack, function (item) {
             if (item === currentTile)
                 isDone = true;
             if (isDone)
@@ -214,9 +213,9 @@ var suggestion = function(letter, occurrences, total) {
 
 var viewModel = function () {
     this.currentLetter = ko.observable("");
-    this.individualCorrectLetters = [];
+    this.answerRack = [];
     for (var i = 0; i < 8; i++)
-        this.individualCorrectLetters.push(new tile("not-used", this, this.individualCorrectLetters));
+        this.answerRack.push(new tile("not-used", this, this.answerRack));
     this.individualGuessedLetters = [];
     for (var c = 97; c < 123; c++)
         this.individualGuessedLetters.push(new tile(String.fromCharCode(c), this, this.individualGuessedLetters));
@@ -230,21 +229,17 @@ var viewModel = function () {
     this.fullResults = [];
     this.hasResults = ko.observable(false);
     this.isEnoughGuessedLetters = function () {
-        return (this.individualCorrectLetters[3].letter() !== "not-used");
+        return (this.answerRack[3].letter() !== "not-used");
     };
 
     this.suggestedLettersToTry = ko.observableArray();
 
     this.lastVowelIndexInAnswerRack = function() {
         for (var i = 7; i >= 0; i--) {
-            var currentTile = this.individualCorrectLetters[i];
+            var currentTile = this.answerRack[i];
             var letter = currentTile.letter();
             switch (letter) {
-                case "a":
-                case 'e':
-                case "i": 
-                case "o":
-                case "u":
+                case "a": case "e": case "i": case "o": case "u":
                 return i;
             }
         }
@@ -252,7 +247,7 @@ var viewModel = function () {
     };
 
     this.isLetterInAnswerRack = function(letter) {
-        var found = ko.utils.arrayFirst(this.individualCorrectLetters, function(item) {
+        var found = ko.utils.arrayFirst(this.answerRack, function(item) {
             return (item.letter() == letter);
         });
         return (found !== null);
