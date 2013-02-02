@@ -47,6 +47,10 @@
             <ul data-bind="foreach : results()">
                 <li data-bind="html: $data"></li>
             </ul>
+            <span>Occurrencies</span>
+            <ul data-bind="foreach: suggestedLettersToTry">
+                <li><span data-bind="text: letter"></span> : <span data-bind="text : percentage"></span>%</li>
+            </ul>
         </div>
         <div data-role="popup" id="not-enough-tiles" data-position-to="window" data-transition="pop" class="ui-content" data-theme="e">
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>

@@ -139,6 +139,8 @@ var tile = function (letter, theViewModel, container) {
         else if (result.length > 200)
             $("#too-many-results").popup("open");
 
+        this.viewModel.updateSuggestedLettersToTry();
+
         function buildRegEx() {
             var searchLetters = buildSearchLetters();
             var lastVowel = theViewModel.lastVowelIndexInAnswerRack();
@@ -200,6 +202,16 @@ var tile = function (letter, theViewModel, container) {
     };
 }.bind(this);
 
+var suggestion = function(letter, occurrences, total) {
+    this.letter = letter;
+    this.occurences = occurrences;
+    this.total = total;
+    this.percentage = ko.computed(function() {
+        var result = ((this.occurences / this.total) * 100).toFixed(1);
+        return result;
+    }, this);
+}.bind(this);
+
 var viewModel = function () {
     this.currentLetter = ko.observable("");
     this.individualCorrectLetters = [];
@@ -221,6 +233,8 @@ var viewModel = function () {
         return (this.individualCorrectLetters[3].letter() !== "not-used");
     };
 
+    this.suggestedLettersToTry = ko.observableArray();
+
     this.lastVowelIndexInAnswerRack = function() {
         for (var i = 7; i >= 0; i--) {
             var currentTile = this.individualCorrectLetters[i];
@@ -235,6 +249,41 @@ var viewModel = function () {
             }
         }
         return i;
+    };
+
+    this.isLetterInAnswerRack = function(letter) {
+        var found = ko.utils.arrayFirst(this.individualCorrectLetters, function(item) {
+            return (item.letter() == letter);
+        });
+        return (found !== null);
+    };
+
+    this.updateSuggestedLettersToTry = function() {
+        this.suggestedLettersToTry.removeAll();
+        var letters = { "a": 0, "b": 0, "c": 0, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0, "i": 0, "j": 0, "k": 0, "l": 0, "m": 0, "n": 0, "o": 0, "p": 0, "q": 0, "r": 0, "s": 0, "t": 0, "u": 0, "v": 0, "w": 0, "x": 0, "y": 0, "z": 0 };
+        var totalWords = this.fullResults.length;
+        for (var i = 0; i < totalWords; i++) {
+            var word = this.fullResults[i];
+            var currentLetters = ko.utils.arrayGetDistinctValues(word);
+            for (var j = 0; j < currentLetters.length; j++) {
+                var currentValue = letters[currentLetters[j]];
+                letters[currentLetters[j]] = currentValue + 1;
+            }
+        }
+
+        for (letter in letters) {
+            var value = letters[letter];
+            if (value === 0)
+                continue;
+
+            if (this.isLetterInAnswerRack(letter))
+                continue;
+
+            this.suggestedLettersToTry.push(new suggestion(letter, value, totalWords));
+        }
+        this.suggestedLettersToTry.sort(function(left, right) {
+            return right.occurences - left.occurences;
+        });
     };
 };
 
