@@ -2358,6 +2358,7 @@ barking
 barks
 barley
 barleys
+barlow
 barmaid
 barmaids
 barman
@@ -3970,6 +3971,7 @@ bourbons
 bout
 boutique
 bouts
+bouvier
 bouzouki
 bovine
 bovines
@@ -11924,6 +11926,7 @@ exiting
 exits
 exodus
 exoduses
+exon
 exorcise
 exorcism
 exorcist
@@ -40197,6 +40200,7 @@ zircon
 zircons
 zither
 zithers
+zitis
 zits
 zloty
 zlotys
