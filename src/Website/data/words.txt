@@ -10240,6 +10240,7 @@ dozed
 dozen
 dozens
 dozenth
+dozer
 dozes
 dozing
 drab
