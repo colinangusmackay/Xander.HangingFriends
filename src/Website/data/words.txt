@@ -18620,6 +18620,7 @@ jujube
 jujubes
 jujutsu
 jujutsus
+juke
 jukebox
 julep
 juleps
@@ -18646,6 +18647,7 @@ juncoes
 juncos
 junction
 juncture
+june
 jungle
 jungles
 junior
