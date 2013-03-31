@@ -8178,6 +8178,7 @@ cuffs
 cuing
 cuisine
 cuisines
+cuke
 culinary
 cull
 culled
@@ -12363,6 +12364,7 @@ fauvism
 fauvisms
 fauvist
 fauvists
+faux
 favor
 favored
 favoring
@@ -15814,6 +15816,7 @@ hairpin
 hairpins
 hairs
 hairy
+haji
 hajj
 hajjes
 hajji
@@ -25883,9 +25886,11 @@ pleat
 pleated
 pleating
 pleats
+pleb
 plebe
 plebeian
 plebes
+plebs
 plectra
 plectrum
 pled
@@ -27269,6 +27274,7 @@ pyrites
 python
 pythons
 pyxes
+qaid
 quack
 quacked
 quackery
@@ -27439,6 +27445,7 @@ quirt
 quirts
 quisling
 quit
+quitch
 quite
 quits
 quitted
@@ -31276,6 +31283,7 @@ shelved
 shelves
 shelving
 shepherd
+sheqel
 sherbert
 sherbet
 sherbets
